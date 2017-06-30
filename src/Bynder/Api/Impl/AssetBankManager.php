@@ -164,4 +164,16 @@ class AssetBankManager implements IAssetBankManager
     }
 
 
+    /**
+     * Gets the download Link for $mediaId.
+     *
+     * @param array $query
+     * @see IAssetBankManager::getMediaList() for more information.
+     */
+    public function getMediaDownload($mediaId)
+    {
+        return $this->requestHandler->sendRequestAsync('GET', 'api/v4/media/' . $mediaId . '/download/');
+    }
+
+
 }
